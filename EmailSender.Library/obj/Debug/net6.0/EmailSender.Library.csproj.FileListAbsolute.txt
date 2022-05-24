@@ -1,0 +1,15 @@
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.csproj.AssemblyReference.cache
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.AssemblyInfoInputs.cache
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.AssemblyInfo.cs
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.csproj.CoreCompileInputs.cache
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\bin\Debug\net6.0\EmailSender.Library.deps.json
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\bin\Debug\net6.0\EmailSender.Library.dll
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\bin\Debug\net6.0\EmailSender.Library.pdb
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\bin\Debug\net6.0\EmailSender.Core.dll
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\bin\Debug\net6.0\EmailSender.Core.pdb
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.csproj.CopyComplete
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.dll
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\refint\EmailSender.Library.dll
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\EmailSender.Library.pdb
+C:\Users\GILA7\source\repos\EmailSender.Library\EmailSender.Library\obj\Debug\net6.0\ref\EmailSender.Library.dll

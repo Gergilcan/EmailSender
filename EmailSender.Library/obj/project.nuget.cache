@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Rkvo2U5NWXHypLE9vGZMHUe5YEuPrpKudsoc2HhcoRdqCxEM7tkIRSuwGJdCFHrxppQ+cb6eNE6PJVwNKTSwDg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\GILA7\\source\\repos\\EmailSender.Library\\EmailSender.Library\\EmailSender.Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GILA7\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\GILA7\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
+  ],
+  "logs": []
+}

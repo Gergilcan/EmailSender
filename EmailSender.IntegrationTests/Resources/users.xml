@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Name>John Smith</Name>
+    <Email>johnsmith@outlook.com</Email>
+    <CreatedAt>2022-05-24T07:26:46.9635068+02:00</CreatedAt>
+    <LastUpdatedAt>2022-05-24T07:26:46.9635068+02:00</LastUpdatedAt>
+    <Id>88965b2e-b634-40fd-ad3c-3c6a37e6909c</Id>
+    <Appointments>
+      <Appointment>
+        <Name>HR Interview</Name>
+        <AppointmentTime>2022-05-23T07:26:46.9640705+02:00</AppointmentTime>
+      </Appointment>
+      <Appointment>
+        <Name>Interview</Name>
+        <AppointmentTime>2022-05-31T07:26:46.9641355+02:00</AppointmentTime>
+      </Appointment>
+    </Appointments>
+  </User>
+</ArrayOfUser>
