@@ -17,14 +17,16 @@ namespace EmailSender.Library
       Users = new List<User>();
     }
 
-    public Guid CreateUser(string? userName, string? email, DateTime forcedCreationDate)
+    public Guid CreateUser(string userName, string email, DateTime forcedCreationDate)
     {
+      if (userName == null || email == null) throw new ArgumentNullException("The name and email are mandatory");
+
       var newUser = new User(userName, email) { CreatedAt = forcedCreationDate };
       Users.Add(newUser);
       return newUser.Id;
     }
 
-    public void LoginAtSpecifiedTime(string? userName, DateTime loginTime)
+    public void LoginAtSpecifiedTime(string userName, DateTime loginTime)
     {
       var foundUser = Users.SingleOrDefault(x => x.Name == userName);
       if (foundUser != null)
@@ -33,13 +35,15 @@ namespace EmailSender.Library
       }
     }
 
-    public User GetUserInformation(string? userName)
+    public User GetUserInformation(string userName)
     {
       return Users.SingleOrDefault(x => x.Name == userName)!;
     }
 
     public void LoadUsersFromFile(string path)
     {
+      if (string.IsNullOrEmpty(path)) throw new ArgumentNullException("The path must be defined");
+
       var serializer = new XmlSerializer(typeof(List<User>));
       var fileStream = File.OpenRead(path);
       Users = (List<User>)serializer.Deserialize(fileStream)!;

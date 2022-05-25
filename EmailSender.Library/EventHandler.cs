@@ -39,27 +39,61 @@ namespace EmailSender.Library
 
     public void CreateUser(string? name, string? mail, DateTime forcedCreationTime)
     {
+      ValidateParameter(nameof(name), name);
+      ValidateParameter(nameof(mail), mail);
       Events.Add(new CreationEvent(name, mail, forcedCreationTime));
     }
 
     public void ForceLoginAtConcreteDate(string? userName, DateTime updateTime)
     {
+      ValidateParameter(nameof(userName), userName);
       Events.Add(new LoginEvent(userName, updateTime));
     }
 
     public void GenerateLifeTimeEvent(string? userName)
     {
+      ValidateParameter(nameof(userName), userName);
       Events.Add(new LifetimeEvent(userName));
     }
 
     public void GenerateEmailSentEvent(string? userName, DateTime sentTime)
     {
+      ValidateParameter(nameof(userName), userName);
       Events.Add(new EmailSentEvent(userName, sentTime));
     }
 
     public void GenerateLastLoginExcedeedEvent(string? userName)
     {
+      ValidateParameter(nameof(userName), userName);
       Events.Add(new LastLoginExcedeedEvent(userName));
+    }
+
+    public void GenerateMissedAppointmentEvent(string? currentUserName, string currentAppointmentName)
+    {
+      ValidateParameter(nameof(currentUserName), currentUserName);
+      ValidateParameter(nameof(currentAppointmentName), currentAppointmentName);
+      Events.Add(new ExpiredAppointmentEvent(currentUserName, currentAppointmentName));
+    }
+
+    public void GenerateCloseAppointmentEvent(string? currentUserName, string currentAppointmentName)
+    {
+      ValidateParameter(nameof(currentUserName), currentUserName);
+      ValidateParameter(nameof(currentAppointmentName), currentAppointmentName);
+      Events.Add(new CloseAppointmentEvent(currentUserName, currentAppointmentName));
+    }
+
+    private static void ValidateParameter(string? parameterName, object parameterValue)
+    {
+      if (parameterValue == null)
+      {
+        throw new ArgumentNullException($"The {parameterName} is mandatory");
+      }
+    }
+
+    public void CleanUp()
+    {
+      observers.Clear();
+      Events.Clear();
     }
   }
 }

@@ -4,11 +4,11 @@ namespace EmailSender.Core.Events;
 
 public class CloseAppointmentEvent : EmailNotificableEvent
 { 
-  public Appointment Appointment { get; set; }
+  public string AppointmentName { get; set; }
 
   public CloseAppointmentEvent() {}
-  public CloseAppointmentEvent(string? userName, Appointment? appointment): base(userName)
+  public CloseAppointmentEvent(string? userName, string appointmentName): base(userName)
   {
-    this.Appointment = appointment;
+    this.AppointmentName = appointmentName;
   }
 }

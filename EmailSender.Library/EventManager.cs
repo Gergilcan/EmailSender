@@ -23,7 +23,7 @@ namespace EmailSender.Library
     public void LoadEventFile(string filePath)
     {
       XmlSerializer serializer = new XmlSerializer(typeof(List<Event>));
-      var eventFileStream = File.OpenRead("Resources/events.xml");
+      var eventFileStream = File.OpenRead(filePath);
       var events = (List<Event>) serializer.Deserialize(eventFileStream);
       ProcessEventList(events);
     }

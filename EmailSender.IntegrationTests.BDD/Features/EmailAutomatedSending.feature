@@ -15,3 +15,15 @@ Scenario: A certain amount of time passing without using the platform.
 	Given the last login time was more than one month ago
 	When the exceeded login event is received 
 	Then an email is sent to the user warning about the excedeed time
+
+Scenario: A missed appointment.
+	Given the last login time was after the appointment date
+	And the HR Interview appointment was not executed
+	When the appointment missed event is fired
+	Then an email is sent to the user warning about the missed appointment
+	
+Scenario: An upcoming appointment.
+	Given the last login time was 10 minutes before the appointment date
+	And the Interview appointment was not executed
+	When the appointment close event is fired
+	Then an email is sent to the user warning about the close appointment

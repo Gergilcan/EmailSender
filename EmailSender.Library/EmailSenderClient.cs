@@ -12,7 +12,7 @@ public class EmailSenderClient : IEmailSenderClient
     switch (@event)
     {
       case CloseAppointmentEvent e:
-        Console.WriteLine($"Sending mail to the user {user.Name} to the email {user.Email} to warn him about an incoming appointment {e.Appointment.Name}");
+        Console.WriteLine($"Sending mail to the user {user.Name} to the email {user.Email} to warn him about an incoming appointment {e.AppointmentName}");
         break;
       case LifetimeEvent e:
         Console.WriteLine($"Sending mail to the user {user.Name} to the email {user.Email} to celebrate the lifetime event");
