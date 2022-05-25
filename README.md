@@ -12,7 +12,7 @@ Of course, all of this needs to have the appropiate role and permissions to comm
 
 There is another part of the application that it needs to be the producer of the messages that will be queued. These could be a lambda or serverless function that periodically checks the users and the appointments to generate this messages.
 
-This is an image of the architechture that I think it could fit the current exercise simplified, that means that there is not shown the load balancer and the multiple instances of the microservices in order to ensure the availability of the service.
+This is an image of the architechture that I think it could fit the current exercise simplified, that means I'm not showning the load balancer and the multiple instances of the microservices in order to ensure the availability of the service on stackes on simplicity.
 
 ![](https://github.com/Gergilcan/EmailSender/blob/master/Documentation/Real%20scenario%20diagram.png)
 
