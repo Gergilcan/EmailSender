@@ -1,8 +1,12 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.IO;
 using System.Linq;
 using EmailSender.Library;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+#endregion
 
 namespace EmailSender.UnitTests
 {

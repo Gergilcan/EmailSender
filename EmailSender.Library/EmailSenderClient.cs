@@ -1,6 +1,10 @@
-﻿using EmailSender.Core;
+﻿#region
+
+using EmailSender.Core;
 using EmailSender.Core.Events;
 using EmailSender.Core.Models;
+
+#endregion
 
 namespace EmailSender.Library;
 

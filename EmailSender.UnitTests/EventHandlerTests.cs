@@ -1,4 +1,5 @@
-using EmailSender.Library;
+#region
+
 using System;
 using System.Linq;
 using EmailSender.Core;
@@ -6,6 +7,7 @@ using EmailSender.Core.Events;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EventHandler = EmailSender.Library.EventHandler;
 
+#endregion
 
 namespace EmailSender.UnitTests
 {
@@ -104,7 +106,6 @@ namespace EmailSender.UnitTests
     [TestMethod]
     public void GenerateLastLoginExcedeedEventWithAllData()
     {
-      var time = DateTime.Now;
       var userName = "Test";
       eventHandler.GenerateLastLoginExcedeedEvent(userName);
 
@@ -115,28 +116,24 @@ namespace EmailSender.UnitTests
     [TestMethod]
     public void GenerateLastLoginExcedeedEventWithoutUserName()
     {
-      var time = DateTime.Now;
-
       Assert.ThrowsException<ArgumentNullException>(() => eventHandler.GenerateLastLoginExcedeedEvent(null));
     }
 
     [TestMethod]
     public void GenerateCloseAppointmentEventWithAllData()
     {
-      var time = DateTime.Now;
       var userName = "Test";
       var appointmentName = "TestAppointment";
       eventHandler.GenerateCloseAppointmentEvent(userName, appointmentName);
 
       var eventResult = (CloseAppointmentEvent)eventHandler.Events.Single();
-      Assert.IsTrue(eventResult.UserName == userName);;
-      Assert.IsTrue(eventResult.AppointmentName == appointmentName);;
+      Assert.IsTrue(eventResult.UserName == userName);
+      Assert.IsTrue(eventResult.AppointmentName == appointmentName);
     }
 
     [TestMethod]
     public void GenerateCloseAppointmentEventWithoutUserName()
     {
-      var time = DateTime.Now;
       var appointmentName = "TestAppointment";
 
       Assert.ThrowsException<ArgumentNullException>(() => eventHandler.GenerateCloseAppointmentEvent(null, appointmentName));
@@ -145,7 +142,6 @@ namespace EmailSender.UnitTests
     [TestMethod]
     public void GenerateCloseAppointmentEventWithoutAppointmentName()
     {
-      var time = DateTime.Now;
       var userName = "Test";
 
       Assert.ThrowsException<ArgumentNullException>(() => eventHandler.GenerateCloseAppointmentEvent(userName, null));
@@ -154,20 +150,18 @@ namespace EmailSender.UnitTests
     [TestMethod]
     public void GenerateMissedAppointmentEventWithAllData()
     {
-      var time = DateTime.Now;
       var userName = "Test";
       var appointmentName = "TestAppointment";
       eventHandler.GenerateMissedAppointmentEvent(userName, appointmentName);
 
       var eventResult = (ExpiredAppointmentEvent)eventHandler.Events.Single();
-      Assert.IsTrue(eventResult.UserName == userName); ;
-      Assert.IsTrue(eventResult.AppointmentName == appointmentName); ;
+      Assert.IsTrue(eventResult.UserName == userName);
+      Assert.IsTrue(eventResult.AppointmentName == appointmentName);
     }
 
     [TestMethod]
     public void GenerateMissedAppointmentEventWithoutUserName()
     {
-      var time = DateTime.Now;
       var appointmentName = "TestAppointment";
 
       Assert.ThrowsException<ArgumentNullException>(() => eventHandler.GenerateMissedAppointmentEvent(null, appointmentName));
@@ -176,7 +170,6 @@ namespace EmailSender.UnitTests
     [TestMethod]
     public void GenerateMissedAppointmentEventWithoutAppointmentName()
     {
-      var time = DateTime.Now;
       var userName = "Test";
 
       Assert.ThrowsException<ArgumentNullException>(() => eventHandler.GenerateMissedAppointmentEvent(userName, null));

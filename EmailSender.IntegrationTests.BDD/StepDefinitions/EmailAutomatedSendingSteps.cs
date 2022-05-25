@@ -1,17 +1,20 @@
+#region
+
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using EmailSender.Core.Events;
 using EmailSender.Core.Models;
 using EmailSender.Library;
 using Moq;
 using EventHandler = EmailSender.Library.EventHandler;
 
+#endregion
+
 namespace EmailSender.IntegrationTests.BDD.StepDefinitions
 {
   [Binding]
   public sealed class EmailAutomatedSendingSteps
   {
-    public IUserRepository userRepository;
+    private IUserRepository userRepository;
     private EventManager eventManager;
     private EventHandler eventHandler;
     private Mock<IEmailSenderClient> emailSenderClient;
@@ -64,9 +67,12 @@ namespace EmailSender.IntegrationTests.BDD.StepDefinitions
     public void GivenTheAppointmentWasNotExecuted(string appointmentName)
     {
       currentAppointment = currentUser.Appointments?.SingleOrDefault(x => x.Name == appointmentName);
-      currentAppointment.Assisted = currentAppointment != null
-        ? false
-        : throw new ArgumentException($"The specified appointment was not existing for the user {currentUser.Name}");
+      if (currentAppointment == null)
+      {
+        throw new ArgumentException($"The specified appointment was not existing for the user {currentUser.Name}");
+      }
+
+      currentAppointment.Assisted = false;
     }
 
     [Given(@"a user was created one year before")]

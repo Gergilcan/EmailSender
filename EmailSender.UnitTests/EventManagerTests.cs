@@ -1,12 +1,17 @@
-﻿using System;
+﻿#region
+
+using System;
 using System.IO;
 using EmailSender.Core;
 using EmailSender.Core.Events;
 using EmailSender.Core.Models;
+using EmailSender.Library;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
-namespace EmailSender.Library.Tests
+#endregion
+
+namespace EmailSender.UnitTests
 {
   [TestClass]
   public class EventManagerTests

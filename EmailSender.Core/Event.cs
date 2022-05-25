@@ -1,10 +1,9 @@
-﻿using EmailSender.Core.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region
+
 using System.Xml.Serialization;
+using EmailSender.Core.Events;
+
+#endregion
 
 namespace EmailSender.Core
 {
@@ -18,11 +17,11 @@ namespace EmailSender.Core
   public class Event
   {
     public Event() { }
-    public Event(string? userName)
+    public Event(string userName)
     {
       UserName = userName;
     }
 
-    public string? UserName { get; set; }
+    public string UserName { get; set; }
   }
 }
