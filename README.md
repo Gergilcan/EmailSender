@@ -3,12 +3,16 @@
 Library that recieve events from a file or from an external source and send mails to the users.
 
 
-# Basic plan
+## Basic plan
 The basic plan it would be to have a message queue (SQS or Kafka if we want to use it also as a temporal storage) in order to recieve the messages regarding the updates and events that we need to trace in our microservice in order to send the appropiate mail using the information that we receive.
 
 In our microservice we could have a listener for that queue and then we would have an smtp client with the credentials needed in order to be able to send the emails to the users.
 
 Of course, all of this needs to have the appropiate role and permissions to communicate between them.
+
+There is another part of the application that it needs to be the producer of the messages that will be queued. These could be a lambda or serverless function that periodically checks the users and the appointments to generate this messages.
+
+## Current implementation
 
 In this test, which I did in .NET core due that I'm more familiar with it and due that the time that it takes to create this infrastructure, apart of the cost I have decided to simulate the queue system with an observer pattern, so we have the EventHandler that is the one in charge of producing the events and the EventManager is the observer of it and depending on the event that we recieve it is able to create users, set their last login time, or send concrete emails depending on the type of the event with the information that we receive (in this case we use the username but we could use the user unique id for example).
 
