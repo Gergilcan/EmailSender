@@ -6,7 +6,7 @@ Library that recieve events from a file or from an external source and send mail
 ## Basic plan
 The basic plan it would be to have a message queue (SQS or Kafka if we want to use it also as a temporal storage) in order to recieve the messages regarding the updates and events that we need to trace in our microservice in order to send the appropiate mail using the information that we receive.
 
-In our microservice we could have a listener for that queue and then we would have an smtp client with the credentials needed in order to be able to send the emails to the users.
+In our microservice instances we could have a listener for that queue and then we would have an smtp client with the credentials needed in order to be able to send the emails to the users.
 
 Of course, all of this needs to have the appropiate role and permissions to communicate between them.
 
