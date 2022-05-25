@@ -12,6 +12,10 @@ Of course, all of this needs to have the appropiate role and permissions to comm
 
 There is another part of the application that it needs to be the producer of the messages that will be queued. These could be a lambda or serverless function that periodically checks the users and the appointments to generate this messages.
 
+This is an image of the architechture that I think it could fit the current exercise simplified, that means that there is not shown the load balancer and the multiple instances of the microservices in order to ensure the availability of the service.
+
+![](https://github.com/Gergilcan/EmailSender/blob/master/Documentation/Real%20scenario%20diagram.png)
+
 ## Current implementation
 
 In this test, which I did in .NET core due that I'm more familiar with it and due that the time that it takes to create this infrastructure, apart of the cost I have decided to simulate the queue system with an observer pattern, so we have the EventHandler that is the one in charge of producing the events and the EventManager is the observer of it and depending on the event that we recieve it is able to create users, set their last login time, or send concrete emails depending on the type of the event with the information that we receive (in this case we use the username but we could use the user unique id for example).
